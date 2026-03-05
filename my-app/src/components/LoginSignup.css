@@ -1,0 +1,205 @@
+/* ============================= */
+/* Overlay with blur */
+/* ============================= */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+/* ============================= */
+/* Login / Register box */
+/* ============================= */
+.login-box {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+  width: 420px;
+  max-height: 90vh;             /* Keep inside screen */
+  border-radius: 18px;
+  border: 5px solid white;
+  box-shadow:
+    0 0 15px rgba(46, 204, 113, 0.4),
+    0 25px 45px rgba(0, 0, 0, 0.9);
+  color: white;
+  font-family: "Segoe UI", Arial, sans-serif;
+  animation: popupScale 0.35s ease;
+}
+
+/* Hide scrollbar (optional) */
+.login-box::-webkit-scrollbar {
+  width: 6px;
+}
+.login-box::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+/* ============================= */
+/* Popup animation */
+/* ============================= */
+@keyframes popupScale {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ============================= */
+/* Header */
+/* ============================= */
+.login-header {
+  flex-shrink: 0; /* Keep header fixed */
+  position: relative;
+  text-align: center;
+  padding: 8px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================= */
+/* Close button */
+/* ============================= */
+.close-btn {
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  background: #ff4d4d;
+  transform: rotate(90deg);
+}
+
+/* ============================= */
+/* Body (scrollable if needed) */
+/* ============================= */
+.login-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 26px;
+}
+
+/* ============================= */
+/* Inputs, Selects, Textarea */
+/* ============================= */
+.login-body input,
+.login-body select,
+.login-body textarea {
+  width: 95%;
+  padding: 13px 15px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  background: #222;
+  color: white;
+  outline: none;
+  transition: 0.3s;
+}
+
+.login-body input::placeholder,
+.login-body textarea::placeholder {
+  color: #aaa;
+}
+
+.login-body input:focus,
+.login-body select:focus,
+.login-body textarea:focus {
+  border-color: #2ecc71;
+  box-shadow: 0 0 8px rgba(46, 204, 113, 0.6);
+  background: #1c1c1c;
+}
+
+/* Textarea specific */
+.login-body textarea {
+  min-height: 80px;
+  resize: none;
+}
+
+/* ============================= */
+/* Register / Login button */
+/* ============================= */
+.login-body button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(90deg, #2ecc71, #27ae60);
+  color: white;
+  transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(46, 204, 113, 0.4);
+}
+
+.login-body button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(46, 204, 113, 0.6);
+}
+
+/* ============================= */
+/* Bottom text / links */
+/* ============================= */
+.login-body p {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.login-body span {
+  color: #2ecc71;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.login-body span:hover {
+  text-decoration: underline;
+  color: #6effa8;
+}
+
+/* ============================= */
+/* Mobile Responsive */
+/* ============================= */
+@media (max-width: 480px) {
+  .login-box {
+    width: 100%;
+    max-height: 95vh;
+    border-radius: 14px;
+  }
+
+  .login-body {
+    padding: 20px;
+  }
+}
+
+@media (max-height: 600px) {
+  .login-box {
+    max-height: 95vh;
+  }
+}

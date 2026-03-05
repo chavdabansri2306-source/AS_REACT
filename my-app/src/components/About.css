@@ -1,0 +1,87 @@
+.about-container {
+  font-family: Arial, sans-serif;
+}
+
+/* Hero Section */
+.about-hero {
+  height: 60vh;
+  background: url("../assets/about-sports.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.about-overlay {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-overlay h1 {
+  font-size: 3rem;
+}
+
+.about-overlay p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Content Section */
+.about-content {
+  display: flex;
+  padding: 60px 10%;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.about-text h2 {
+  color: #1e8f4d;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Features */
+.about-features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+  background: #b69292;
+}
+
+.feature-card {
+  background:  #b06e6e;
+  padding: 25px;
+  width: 250px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.feature-card h3 {
+  margin-bottom: 10px;
+  color: #1e432d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-features {
+    flex-direction: column;
+  }
+}
